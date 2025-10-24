@@ -2,7 +2,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Tek script: DETR (HF) + RetinaNet (torchvision) COCO-format eğitim (GÜÇLENDİRİLMİŞ + NEUTRO)
+Tek script: DETR (HF) + RetinaNet (torchvision) COCO-format eğitim ( + NEUTRO)
 - OOP tasarım, ortak Evaluator (COCOeval)
 - AMP (torch.amp), gradient clipping, Grad Accumulation
 - Warmup + Cosine LR, backbone/other farklı LR (DETR)
@@ -132,7 +132,7 @@ class ModelEMA:
 
 
 # ===========================================================
-# DATASET (temiz)
+# DATASET
 # ===========================================================
 class CocoBase(Dataset):
     def __init__(self, img_dir, ann_json, aug_hflip=0.0, color_jitter: ColorJitter | None = None, for_detr=False):
