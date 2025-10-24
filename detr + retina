@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Tek script: DETR (HF) + RetinaNet (torchvision) COCO-format eğitim (GÜÇLENDİRİLMİŞ)
+Tek script: DETR (HF) + RetinaNet (torchvision) COCO-format eğitim
 - OOP tasarım, ortak Evaluator (COCOeval)
 - AMP (torch.amp), gradient clipping, Grad Accumulation
 - Warmup + Cosine LR, backbone/other farklı LR (DETR)
@@ -506,7 +506,7 @@ def main():
     paths=ensure_paths(Path(args.data_root))
     out_dir=Path(args.out_dir); out_dir.mkdir(parents=True,exist_ok=True)
 
-    # ColorJitter mantığı: DETR için opt-in (--cj), Retina için default açık (flag zaten set)
+    # ColorJitter mantığı: DETR için opt-in (--cj), Retina için default açık (flag set)
     common = {
         "batch_size": args.batch_size,
         "num_workers": args.num_workers,
